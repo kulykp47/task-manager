@@ -26,6 +26,7 @@ class TaskManagerApp:
         # Кнопки
         tk.Button(self.root, text="Добавить", command=self.add_task).grid(row=3, column=0)
         tk.Button(self.root, text="Удалить", command=self.delete_task).grid(row=3, column=1)
+        tk.Button(self.root, text="Сохранить", command=self.save_txt_).grid(row=3, column=2)
 
         # Список задач
         self.tasks_listbox = tk.Listbox(self.root, width=50)
@@ -59,3 +60,6 @@ class TaskManagerApp:
         self.title_entry.delete(0, tk.END)
         self.desc_text.delete("1.0", tk.END)
         self.date_entry.delete(0, tk.END)
+
+    def save_txt_(self):
+        self.manager.save_txt()

@@ -44,3 +44,9 @@ class TaskManager:
                 ]
         except FileNotFoundError:
             self.tasks = []
+
+    def save_txt(self):
+        with open('tasks.txt', 'w', encoding='utf-8') as file:
+            for i in self.tasks:
+                file.write(f"{i.title} {i.description} {i.due_date}")
+                file.write("\n")
